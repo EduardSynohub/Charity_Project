@@ -11,12 +11,7 @@
 </head>
 <body>
 <header class="header--form-page">
-    <sec:authorize access="isAnonymous()">
-    <%@include file="header.jsp"%>
-    </sec:authorize>
-    <sec:authorize access="isAuthenticated()">
         <%@include file="header-user.jsp"%>
-    </sec:authorize>
 </header>
 
 <section class="form--steps">

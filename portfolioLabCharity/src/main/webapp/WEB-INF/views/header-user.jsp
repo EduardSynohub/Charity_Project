@@ -16,6 +16,7 @@
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
+        <sec:authorize access="isAuthenticated()">
         <ul class="nav--actions">
             <li class="logged-user">
                 <sec:authorize access="isAuthenticated()">
@@ -33,6 +34,14 @@
                 </ul>
             </li>
         </ul>
+        </sec:authorize>
+
+        <sec:authorize access="isAnonymous()">
+        <ul class="nav--actions">
+            <li><a href="/login" class="btn btn--small btn--without-border">Zaloguj</a></li>
+            <li><a href="/register" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+        </ul>
+        </sec:authorize>
 
         <ul>
             <li><a href="/addDonation" class="btn btn--without-border active">Start</a></li>
